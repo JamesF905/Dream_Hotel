@@ -25,6 +25,17 @@ THEN their bill is shown, with any extra fees included, the room would then beco
 
 MVP - they can book a room, book a restaurant stay, and when they checkout the room becomes available
 
+Potential API'S
+
+jquery
+moment
+font awesome
+google maps
+whether 
+
+
+test
+
 
 
 
