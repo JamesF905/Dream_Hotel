@@ -34,7 +34,11 @@ google maps
 whether 
 
 
-test
+Tasks Breakdown
+ 
+Rakibul will work on the wireframe and implementing some styles using a css framework (not bootstrap)
+Sampat - html layout, finishing setting up the github repo
+James - Jquery finishing the github settings, for the projects section
 
 
 
