@@ -1,0 +1,191 @@
+:root {
+  --off-yellow: #fcecb4;
+  --sky-blue: #d3dcec;
+  --orange: #b95d3f;
+  --light-brown: #704828;
+  --dark-brown: #413524;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7em;
+}
+
+nav {
+  background-color: var(--off-yellow);
+}
+
+.introHistory {
+  background-color: var(--sky-blue);
+}
+
+.roomsSection {
+  background-color: var(--orange);
+  color: #f4f4f4;
+}
+
+.restaurantsSection {
+  background-color: var(--light-brown);
+  color: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1, h2, h3 {
+  padding-bottom: none;
+}
+
+p {
+  margin: 10px 0px;
+}
+
+.introHistory {
+  margin: 25px 25px;
+}
+
+.flex-container1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container3 {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container4 {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-group {
+  width: 40%;
+  text-align: center;
+  padding: 20px;
+  margin-left: 25px;
+  height: 100%;
+  color: black;
+  }
+
+.card {
+  height: 100%;
+  color: black;
+}
+
+#roomTypes {}
+
+#roomPrices {
+  margin-left: 50px;
+}
+
+#roomBooking {
+  margin-bottom: 20px;
+  margin-left: 70px;
+}
+
+#restaurantTypes {}
+
+#restaurantPrices {
+  margin-left: 50px;
+}
+
+#restaurantBooking {
+  margin-bottom: 20px;
+  margin-left: 70px;
+}
+
+.primary-text {
+  color: #e8a925;
+}
+
+.lead-para {
+  font-size: 20px;
+}
+
+.btn {
+  color: #fff;
+  display: inline-block;
+  background: #222;
+  padding: 13px 20px;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #222;
+  color: #cb4c3a;
+}
+
+.btn-light {
+  background: #fff;
+  color: #333;
+}
+
+.bg-dark {
+  background-color: #111;
+  color: #f4f4f4;
+}
+
+.bg-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.bg-primary {
+  background: #cb4c3a;
+  color: #fff;
+}
+
+.clr {
+  clear: both;
+}
+
+.l-heading {
+  font-size: 30px;
+}
+
+.py-1 {
+  padding: 10px 0;
+}
+
+.py-2 {
+  padding: 20px 0;
+}
+
+.py-3 {
+  padding: 30px 0;
+}
+
+.box {
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  padding: 50px;
+}
+
+.box i {
+  margin-bottom: 20px;
+}
+
+footer {
+background-color: var(--dark-brown);
+  text-align: center;
+  color: #f4f4f4;
+  padding: 20px;
+}
