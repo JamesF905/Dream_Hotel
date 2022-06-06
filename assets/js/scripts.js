@@ -4,12 +4,12 @@ let remote_array = JSON.parse(localStorage.getItem("Rooms_List"));
 if (remote_array === null) {
     default_rooms_array();
 }
-render_rooms(); 
+render_rooms();
 
 
 
 function selectSuite(){
-    let blah = $(this).attr('data-suite'); 
+    let blah = $(this).attr('data-suite');
     $("#book_now").attr('data-room_type', blah);
     alert($("#book_now").attr('data-room_type'));
 
@@ -19,9 +19,9 @@ function selectSuite(){
 //add smoking and bed types to the array
 function default_rooms_array(){
     let room_types = {
-            Emperor: [500,5,500,0,"King",true,true,true,true], 
-            Romance: [400,5,400,0,"Queen",true,true,false,true], 
-            Family: [300,10,300,0,"Two Double, One Single",false,true,true,true], 
+            Emperor: [500,5,500,0,"King",true,true,true,true],
+            Romance: [400,5,400,0,"Queen",true,true,false,true],
+            Family: [300,10,300,0,"Two Double, One Single",false,true,true,true],
             Double: [200,10,200,0,"Two Double",false,true,false,true],
             Economy: [100,10,100,5,"One Double",false,false,false,true]
     };
@@ -53,7 +53,7 @@ function default_rooms_array(){
                 check_in: 11,
                 check_out: 16,
                 late_checkout: false
-            }); 
+            });
         }
     }
     localStorage.setItem("Rooms_List", JSON.stringify(room_list));
@@ -64,10 +64,10 @@ function default_rooms_array(){
 //function to display rooms that are saved in local storage on the home page
 function render_rooms(){
     var remote_array = JSON.parse(localStorage.getItem("Rooms_List"));
-    if (remote_array !== null) {        
-        
-        for(i=0; i<remote_array.length; i++){          
-            if(remote_array[i].booked == false){                
+    if (remote_array !== null) {
+
+        for(i=0; i<remote_array.length; i++){
+            if(remote_array[i].booked == false){
                 let list_item = $("<li>");
                 let link = $("<button>").addClass("rooms_button").text(remote_array[i].room_number);
                 link.appendTo(list_item);
@@ -101,11 +101,11 @@ function setRoom(){
     let end_stay = "11/17/2022";
     let early_checkin = true; //boolean
     let late_checkout = false; //boolean
-    
+
     // Get array from local storage
     //var remote_array = JSON.parse(localStorage.getItem("Rooms_List"));
-           
-        for(i=0; i<remote_array.length; i++){          
+
+        for(i=0; i<remote_array.length; i++){
             if(remote_array[i].booked == false){
                 if(remote_array[i].type === type){
                     remote_array[i].booked = true;
@@ -124,6 +124,6 @@ function setRoom(){
             }
         }
         localStorage.setItem("Rooms_List", JSON.stringify(remote_array));
-        $("#roomTypes").empty();   
+        $("#roomTypes").empty();
         render_rooms();
 }
