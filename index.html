@@ -1,273 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Website | Welcome</title>
-  <script src="https://kit.fontawesome.com/d2a386da24.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-  <link rel="stylesheet" href="./assets/css/jass.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Dream Hotel - Cancun</title>
 </head>
-
 <body>
-
-
-
-  <!-- THIS IS PAGE 1-->
-  <!-- THIS IS PAGE 1-->
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <h1>Dream Hotels & Spa Cancun</h1>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+<header>
+    <a href="index.html">
+        <h1>Dream Hotels and Spa</h1>
+        <h3>Cancun - Mexico</h3>
+    </a>
+    <nav>
+        <button>
+            <a href="#roomBooking">Rooms</a>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#roomBookingSection" style="color: red;">Room Bookings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#restaurantBookingSection" style="color: blue;">Restaurants</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+        <button>
+            <a href="#reservations">Restaurants</a>
+        </button>
+        <button>
+            <a href="#Bookings">Bookings</a>
+        </button>
     </nav>
-  </header>
+</header>
+<main>
+    <article id="banner">
 
-  <section class=introHistory>
-    <div class="flex-container">
-      <div class="card text-center d-flex" style="width: 75%; height: 600px">
-        <div class="card-body">
-          <h3 class="card-title">Enjoy your stay</h3>
-          <p class="hotelDesc">Dream Hotels & Spa is a family-friendly hotel that offers a wide range of accommodation types, from rooms to suites. The Dream hotel is a luxury hotel located in the heart of Cancun. All this in the peaceful
-            surroundings
-            of our beautiful gardens, will make your time at Cancun an unforgettable holiday.</p>
-          <p class="hotelDesc">Esteemed guests are welcome to relax and unwind in a quiet and elegant setting in the popular resort and enjoy a genuine experience of leisure, pleasure, gastronomy and wellness within the premises of the resort.</p>
-          <p class="hotelDesc">In a small traditional city called Cancun, which is one of the most beautiful and picturesque places in Mexico, we chose to build a lovely high-quality hotel which will give our guests the opportunity to experience a
-            holiday with wonderful
-            surroundings of nature and at the same time luxury and coziness.</p>
-          <p class="hotelDesc">Dream hotel offers you a privileged experience combining comfort and conviviality. Whether you are a backpacker, a solo traveler or with your family, our hotel with top-of-the-range service will meet all your
-            expectations. More than just a
-            hotel, Dream hotel offers you a place to live and meet people.</p>
-          <p class="hotelDesc">The Dream hotel offers a complete experience with common areas that allow you to meet new people in a unique atmosphere. Lounge area, Ping Pong table, table soccer, we told you, it’s not a hotel like the others.</p>
-          <p class="hotelDesc">In the heart of Cancun, Dream hotel offers a comfortable stay in an elegant 19th century architecture. The hotel is close to (LN) and (LN). Location wise, (LN) and (LN) are within walking distance. Stay at our Dream
-            hotel and experience a
-            special sojourn with quintessential American charm.</p>
-          <p class="hotelDesc">All the rooms have been furnished with a blend of style and functionality in mind. Simple painted walls mean rooms feel light, while surfaces feature a dark wood veneer, such as bedheads, shelves and wardrobes.</p>
-        </div>
-      </div>
-      <div class="card text-center d-flex" style="width: 75%; height: 600px">
-        <div class="card-body">
-          <!-- Reference: https://www.w3schools.com/w3css/w3css_slideshow.asp -->
-          <img class="autoSlides" src="./assets/images/1location.jpg" alt="slideshow_images">
-          <img class="autoSlides" src="./assets/images/2resort.jpg" alt="slideshow_images">
-          <img class="autoSlides" src="./assets/images/3resort.jpg" alt="slideshow_images">
-          <img class="autoSlides" src="./assets/images/4corridor.jpg" alt="slideshow_images">
-          <img class="autoSlides" src="./assets/images/5free_meals.jpg" alt="slideshow_images">
-          <img class="autoSlides" src="./assets/images/6pool.jpg" alt="slideshow_images">
-          <img class="autoSlides" src="./assets/images/7gym.jpg" alt="slideshow_images">
-        </div>
-      </div>
+    </article>
+    <article id="roomBooking">        
+            <section class="info_sec">
+                <h2>Your Room is Waiting...</h2>
+                <p>Book now for as low as $100!</p>
+                <label for="type">Emperor Suite</label>      
+                <input type="radio" name="type" value="Emperor">
+                <label for="type">Romance Suite</label>
+                <input type="radio" name="type" value="Romance">
+                <label for="type">Family Suite</label>
+                <input type="radio" name="type" value="Family">
+                <label for="type">Double Suite</label>
+                <input type="radio" name="type" value="Double">
+                <label for="type">Economy Suite</label>
+                <input type="radio" name="type" value="Economy">                      
+            </section>        
+            <section class="form_sec">
+                    <input type="text" class="form-control" id="fullName" placeholder="First Name">
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    <input type="text" class="form-control" id="email" placeholder="Email">
+                    <input type="text" class="form-control" id="phone" placeholder="Phone">
+                    <input type="text" class="form-control" id="adults" placeholder="Adults">
+                    <input type="text" class="form-control" id="children" placeholder="Children">
+                    <input type="text" class="form-control" id="dateStart" placeholder="From">
+                    <input type="text" class="form-control" id="dateEnd" placeholder="To">
+                    <button class="form-control" id="inputFullName">Book Now</button>
+            </section>        
+    </article>
+    <article id="mini-banner">
+        <figure>            
+            <i class="fas fa-hotel fa-3x"></i>
+            <h3>Great Location</h3>
+            <figcaption>Loads of local sights, scenes, and adventures await. Fun for the whole family is just minutes away.</figcaption>
+        </figure>
+        <figure>
+            <i class="fas fa-utensils fa-3x"></i>
+            <h3>Free Meals</h3>
+            <figcaption>Dine at any of our 6 world class restaurants and bars!</figcaption>
+        </figure>
+        <figure>
+            <i class="fas fa-dumbbell fa-3x"></i>
+            <h3>Fitness Area</h3>
+            <figcaption>Dont miss a beat while taking advantage of our top of the line fitness fascilities.</figcaption>
+        </figure>
+    </article>
+    <article id="reservations">
+        <section class="info_sec">
 
-    </div>
-
-  </section>
-
-
-
-  <!-- THIS IS PAGE 2-->
-  <!-- THIS IS PAGE 2-->
-  <section id="roomBookingSection">
-    <div class="d-flex justify-content-around flex-container1">
-      <h2>Room Bookings</h2>
-    </div>
-
-    <div class="flex-container">
-      <div class="card-group" id="roomTypes">
-        <div class="card">
-          <img src="./assets/images/king_bed.jpg" class="card-img-top" alt="king_bed">
-          <div class="card-body">
-            <h5 class="card-title">King Suite</h5>
-            <h5 class="card-text">(smoking or non-smoking)</h5>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./assets/images/queen_bed.jpg" class="card-img-top" alt="queen_bed" style="height:50%;">
-          <div class="card-body">
-            <h5 class="card-title">Queen Suite</h5>
-            <h5 class="card-text">(smoking or non-smoking)</h5>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./assets/images/twin_double_bed.jpg" class="card-img-top" alt="twin_double_bed">
-          <div class="card-body">
-            <h5 class="card-title">Single Suite</h5>
-            <h5 class="card-text">(smoking or non-smoking)</h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="roomPrices" style="width: 10rem;">
-        <div class="card-header">
-          Room Prices / night
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">King: $250</li>
-          <li class="list-group-item">Queen: $200</li>
-          <li class="list-group-item">Twin: $180</li>
-        </ul>
-      </div>
-
-      <div id="roomBooking">
-        <div class="mb-1 row">
-          <label for="inputFullName" class="col-sm-2 col-form-label">Full Name:</label>
-          <div class="col-sm-20">
-            <input type="text" class="form-control" id="inputFullName">
-          </div>
-        </div>
-        <div class="mb-1 row">
-          <label for="inputEmail" class="col-sm-2 col-form-label">Email Address:</label>
-          <div class="col-sm-20">
-            <input type="text" class="form-control" id="inputEmail">
-          </div>
-        </div>
-        <div class="mb-1 row">
-          <label for="inputBillingAddress" class="col-sm-2 col-form-label">Billing Address:</label>
-          <div class="col-sm-20">
-            <input type="text" class="form-control" id="inputBillingAddress">
-          </div>
-        </div>
-        <div class="mb-1 row">
-          <label for="inputContactNumber" class="col-sm-2 col-form-label">Contact Number:</label>
-          <div class="col-sm-20">
-            <input type="text" class="form-control" id="inputContactNumber">
-          </div>
-        </div>
-        <div class="">
-          <button type="button" class="btn btn-primary btn-lg">SUBMIT</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex-container">
-      <div class="box bg-light">
-        <i class="fas fa-hotel fa-3x"></i>
-        <h3>Great Location</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, modi!</p>
-      </div>
-      <div class="box bg-primary">
-        <i class="fas fa-utensils fa-3x"></i>
-        <h3>Free Meals</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam harum unde quibusdam reiciendis a qui!</p>
-      </div>
-      <div class="box bg-light">
-        <i class="fas fa-dumbbell fa-3x"></i>
-        <h3>Fitness Area</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse fuga delectus, nesciunt veniam qui nulla.</p>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- THIS IS PAGE 3-->
-  <!-- THIS IS PAGE 3-->
-  <section class id="restaurantBookingSection">
-    <div class="d-flex justify-content-around flex-container1">
-      <h2>Restaurant Bookings</h2>
-    </div>
-
-    <div class="flex-container">
-      <div class="card-group" id="restaurantTypes">
-        <div class="card">
-          <img src="./assets/images/1dining_chinese.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Chinese Cuisine</h5>
-            <p class="card-text">(comment)</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./assets/images/2dining_continental.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Continental Cuisine</h5>
-            <p class="card-text">(comment)</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./assets/images/3dining_indian.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Indian Cuisine</h5>
-            <p class="card-text">(comment)</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="restaurantPrices" style="width: 10rem;">
-        <div class="card-header">
-          Restaurant Prices
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
-        </ul>
-      </div>
-
-      <div id="restaurantBooking">
-        <div class="mb-1 row">
-          <label for="inputFullName" class="col-sm-2 col-form-label">Full Name:</label>
-          <div class="col-sm-20">
-            <input type="text" class="form-control" id="inputFullName">
-          </div>
-        </div>
-        <div class="mb-1 row">
-          <label for="inputEmail" class="col-sm-2 col-form-label">Email Address:</label>
-          <div class="col-sm-20">
-            <input type="text" class="form-control" id="inputEmail">
-          </div>
-        </div>
-        <div class="mb-1 row">
-          <label for="inputBillingAddress" class="col-sm-2 col-form-label">Billing Address:</label>
-          <div class="col-sm-20">
-            <input type="text" class="form-control" id="inputBillingAddress">
-          </div>
-        </div>
-        <div class="mb-1 row">
-          <label for="inputContactNumber" class="col-sm-2 col-form-label">Contact Number:</label>
-          <div class="col-sm-20">
-            <input type="text" class="form-control" id="inputContactNumber">
-          </div>
-        </div>
-        <div class="">
-          <button type="button" class="btn btn-primary btn-lg">SUBMIT</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <footer id="footer">
-    <p>Copyright &copy; 2022 Dream Hotels & Spa, All Rights Reserved</p>
-  </footer>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-  <script src="./assets/js/script.js"></script>
+        </section>
+        <section class="form_sec">
+            <form id="rest_booking">
+                <input type="text" class="form-control" id="res_room" placeholder="Room #">
+                <input type="text" class="form-control" id="res_room" placeholder="Last Name">
+                <input type="text" class="form-control" id="res_room" placeholder="Adults">
+                <input type="text" class="form-control" id="res_room" placeholder="Children">
+                <input type="text" class="form-control" id="res_room" placeholder="What Time?">
+                <button type="submit" class="form-control" >Reserve Now</button>
+            </form>
+        </section>
+    </article>
+</main>
+<footer>
+    <p>Copyright &copy; 2022 Dream Hotels, All Rights Reserved</p>
+</footer>
+<script src="assets/js/scripts.js"></script>
+  
 </body>
-
 </html>
