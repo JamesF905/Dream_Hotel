@@ -34,6 +34,26 @@ nav button{
     margin: 0 20px;
 }
 
+.hotelDesc {
+  text-align: left;
+  font-variant: small-caps;
+  color: white;
+  font-size: 20px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#banner {
+  margin: 10px 10px;
+}
+
+
+
 main{
     flex:1;
     display: flex;
@@ -55,7 +75,7 @@ main{
         background-position: bottom;
         background-repeat: no-repeat;
         background-size: 100%;
-        color: aliceblue;      
+        color: aliceblue;
     }
 
     input[type=radio] {
@@ -115,13 +135,13 @@ main{
         max-width: 70%;
         align-self: baseline;
     }
-    
+
     .form_sec{
         background-color:rgba(0, 0, 0, 0.8);
         max-width: 30%;
         min-width: 200px;
         padding: 10px 20px;
-        
+
     }
 
     .form-control {
@@ -153,7 +173,7 @@ main{
         padding: 50px;
         color: #333;
     }
-    
+
     figure i {
         margin-bottom: 20px;
     }
@@ -173,7 +193,7 @@ main{
 
     figure:nth-of-type(even){
         background-color: #2d3e50;
-        color: #fff;        
+        color: #fff;
     }
 
 
@@ -181,8 +201,10 @@ footer{
     flex:0 0 86px;
     text-align: center;
     line-height: 80px;
+
     color:#fcecb4;
     background-color: rgb(32, 30, 30);
+
 }
 
 
