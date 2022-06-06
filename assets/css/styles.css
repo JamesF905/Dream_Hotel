@@ -1,0 +1,188 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+span{font-size: 30px;}
+li{
+    list-style-type: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: brown;
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    flex:0 0 70px;
+    background-color:#fcecb4;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 25px;
+    color: rgb(32, 30, 30);
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+nav button{
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+main{
+    flex:1;
+    display: flex;
+    flex-flow:column;
+    padding:15px;
+}
+    article{
+        flex:1 0 550px;
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #info{
+        background-color:#d3dcec;
+    }
+    #roomBooking{
+        background-image:url("../images/rod-long-2P_ifaetDm0-unsplash.jpg");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: aliceblue;      
+    }
+
+    input[type=radio] {
+    }
+
+    #roomBooking h2{
+        font-size: 50px;
+    }
+
+    #roomBooking p{
+        font-size: 40px;
+    }
+
+    #roomBooking li{
+        cursor: pointer;
+        height: 150px;
+        width: 150px;
+        box-shadow: 2px 2px 2px black;
+        margin: 10px;
+    }
+
+    #roomBooking img{
+        width: 100%;
+        height: 100%;
+    }
+
+    #mini-banner{
+     flex-basis: 300px;
+     background-color:green;
+    }
+    #reservations{
+        background-image: url(../images/1dining_chinese.jpg);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    section{
+        width: 100%;
+        /* transition: all 0.5s;*/
+        position: relative;
+        padding: 10px;
+    }
+    .info_sec{
+        max-width: 70%;
+        align-self: baseline;
+    }
+    
+    .form_sec{
+        background-color:rgba(0, 0, 0, 0.8);
+        max-width: 30%;
+        min-width: 200px;
+        padding: 10px 20px;
+        
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 4px;
+        margin: 10px 0;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 40px;
+        color: #495057;
+        background-color: #fff;
+        box-sizing: border-box;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        transition: all .15s ease-in-out;
+    }
+
+    figure{
+        background-color: #d9e9e8;
+        display: flex;
+        width: 100%;
+        max-width: 33.33333333333%;
+        flex-flow: column;
+        justify-content:initial;
+        align-items:center;
+        text-align: center;
+        padding: 50px;
+        color: #333;
+    }
+    
+    figure i {
+        margin-bottom: 20px;
+    }
+
+    figure h3{
+        font-variant: small-caps;
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin: 0 0 0.5rem;
+    }
+
+    figcaption{
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin: 10px 0px;
+    }
+
+    figure:nth-of-type(even){
+        background-color: #2d3e50;
+        color: #fff;        
+    }
+
+
+footer{
+    flex:0 0 86px;
+    text-align: center;
+    line-height: 80px;
+    background-color: #413524; 
+}
+
+
+@media only screen and (max-width: 733px) {
+    .info_sec, .form_sec, figure{
+        max-width: 100%;
+    }
+
+    main{
+        padding:15px 0;
+    }
+
+    article{
+        margin: 10px 0;
+    }
+}
