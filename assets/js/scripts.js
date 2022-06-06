@@ -64,23 +64,34 @@ function default_rooms_array(){
 //function to display rooms that are saved in local storage on the home page
 function render_rooms(){
     var remote_array = JSON.parse(localStorage.getItem("Rooms_List"));
-    if (remote_array !== null) {
 
-        for(i=0; i<remote_array.length; i++){
-            if(remote_array[i].booked == false){
+    if (remote_array !== null) {        
+        
+        for(i=0; i<remote_array.length; i++){          
+                            
+
                 let list_item = $("<li>");
-                let link = $("<button>").addClass("rooms_button").text(remote_array[i].room_number);
+                //let link = $("<button>").addClass("rooms_button").text(remote_array[i].room_number);
+                let link = $("<div>").addClass("rooms_block").text(remote_array[i].room_number);
                 link.appendTo(list_item);
 
                 let target = remote_array[i].type;
-                if($('#'+target).length>0){
-                    list_item.appendTo($('#'+target));
+                let availability;
+                if(remote_array[i].booked == false){
+                    availability = "avail_rooms";
                 }else{
-                    let list = $("<ul>").attr("id", remote_array[i].type);
-                    list_item.appendTo(list);
-                    list.appendTo($('#reservations'));
+                    availability = "booked_rooms";
                 }
-            }
+                if($('#'+availability+'_'+target).length>0){
+                    list_item.appendTo($('#'+availability+'_'+target));
+                }else{
+                    let room_type = $("<h2>").text(target);
+                    let list = $("<ul>").attr("id", availability+'_'+target);
+                    list_item.appendTo(list);
+                    room_type.appendTo($('#'+availability));
+                    list.appendTo($('#'+availability));
+                }
+            
         }
     }
 }
@@ -89,23 +100,23 @@ function render_rooms(){
 
 // set the rooms as booked based on form assume this info is coming from the form inputs
 function setRoom(){
-    //alert($(this).attr("data-room_type"))
-    let type = "Emperor";
-    let name = "Joe";
-    let surname = "Blow";
-    let email = "";
-    let phone = "";
-    let adult_guests = 2;
-    let child_guests = 1;
-    let start_stay = "11/12/2022";
-    let end_stay = "11/17/2022";
-    let early_checkin = true; //boolean
+    let type = $('input[name="type"]:checked').val();
+    let name = $('#fullName').val();
+    let surname = $('#lastName').val();
+    let email = $('#email').val();
+    let phone = $('#phone').val();
+    let adult_guests = $('#adults').val();
+    let child_guests = $('#children').val();
+    let start_stay = $('#dateStart').val();
+    let end_stay = $('#dateEnd').val();
+    let early_checkin = false; //boolean
     let late_checkout = false; //boolean
 
     // Get array from local storage
-    //var remote_array = JSON.parse(localStorage.getItem("Rooms_List"));
 
-        for(i=0; i<remote_array.length; i++){
+
+        for(i=0; i<remote_array.length; i++){          
+
             if(remote_array[i].booked == false){
                 if(remote_array[i].type === type){
                     remote_array[i].booked = true;
@@ -124,6 +135,9 @@ function setRoom(){
             }
         }
         localStorage.setItem("Rooms_List", JSON.stringify(remote_array));
-        $("#roomTypes").empty();
+
+        $("#avail_rooms").empty();
+        $("#booked_rooms").empty();
+
         render_rooms();
 }
