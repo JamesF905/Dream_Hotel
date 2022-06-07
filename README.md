@@ -1,5 +1,5 @@
 # Online Hotel Booking System
-# by_James_Fidlin
+# by_Rakibul, James, and Sampat
 
 <div id="top"></div>
 
