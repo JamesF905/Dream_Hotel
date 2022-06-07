@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <script src="https://kit.fontawesome.com/a53736c1d3.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <link rel="stylesheet" href="./assets/css/jass.css" />
+  <link rel="stylesheet" href="./assets/css/style_poi.css" />
+
+  <title>Points of Interests - Dreams Hotel, Cancun, Mexico</title>
+</head>
+
+<body>
+
+  <div class="heading">
+    <h1>Points of Interests</h1>
+    <h1>Dreams Hotel, Cancun, Mexico</h1>
+  </div>
+
+  <div class="formSection">
+    <h4 class="textPrimary">Powered by TomTom API</h4>
+    <h2>Search using a POI Category:</h2>
+    <form id="search-form" class="form w-100">
+      <form>
+        <input type="text" id="poiCategory" placeholder="restaurant">
+        <br>
+        <br>
+        <a href="poi_categories.html" target="_blank">Click here for POI Category examples. (You will see a long list of words)</a>
+        <br>
+        <br>
+        <input type="submit" value="Search" id="poiData">
+        <br>
+        <br>
+      </form>
+    </form>
+    <p id="displayName"></p>
+  </div>
+
+  <section class="singleBox">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <p id="displayPoiName">POI Name:</p>
+            <p id="displayPoiPhone">POI Phone:</p>
+            <p id="displayPoiAddress">POI Address:</p>
+            <p id="displayPoiDistance">POI Distance:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="button-container">
+  </div>
+
+  <section class="remainingBoxes">
+    <div class="row">
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName1">POI Name:</p>
+          <p id="dispPoiPhone1">POI Phone:</p>
+          <p id="dispPoiAddress1">POI Address:</p>
+          <p id="dispPoiDistance1">POI Distance:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName2">POI Name:</p>
+          <p id="dispPoiPhone2">POI Phone:</p>
+          <p id="dispPoiAddress2">POI Address:</p>
+          <p id="dispPoiDistance2">POI Distance:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName3">POI Name:</p>
+          <p id="dispPoiPhone3">POI Phone:</p>
+          <p id="dispPoiAddress3">POI Address:</p>
+          <p id="dispPoiDistance3">POI Distance:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName4">POI Name:</p>
+          <p id="dispPoiPhone4">POI Phone:</p>
+          <p id="dispPoiAddress4">POI Address:</p>
+          <p id="dispPoiDistance4">POI Distance:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName5">POI Name:</p>
+          <p id="dispPoiPhone5">POI Phone:</p>
+          <p id="dispPoiAddress5">POI Address:</p>
+          <p id="dispPoiDistance5">POI Distance:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName6">POI Name:</p>
+          <p id="dispPoiPhone6">POI Phone:</p>
+          <p id="dispPoiAddress6">POI Address:</p>
+          <p id="dispPoiDistance6">POI Distance:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName7">POI Name:</p>
+          <p id="dispPoiPhone7">POI Phone:</p>
+          <p id="dispPoiAddress7">POI Address:</p>
+          <p id="dispPoiDistance7">POI Distance:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName8">POI Name:</p>
+          <p id="dispPoiPhone8">POI Phone:</p>
+          <p id="dispPoiAddress8">POI Address:</p>
+          <p id="dispPoiDistance8">POI Distance:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p id="dispPoiName9">POI Name:</p>
+          <p id="dispPoiPhone9">POI Phone:</p>
+          <p id="dispPoiAddress9">POI Address:</p>
+          <p id="dispPoiDistance9">POI Distance:</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="./assets/js/script_poi.js"></script>
+</body>
+
+</html>
