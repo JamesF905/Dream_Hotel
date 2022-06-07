@@ -1,0 +1,65 @@
+body {
+  background-color: #ffffcc;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  color: blue;
+}
+
+h2 {
+  font-size: 45px;
+  font-variant: small-caps;
+}
+
+.heading {
+  color: black;
+  margin: 20px 20px;
+  font-variant: small-caps;
+}
+
+.formSection {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.singleBox {
+  margin-left: 485px;
+  margin-right: 785px;
+}
+
+.remainingBoxes {
+  margin-left: 500px;
+  margin-right: 800px;
+}
+
+.card {
+  width: 100%;
+}
+
+.card-body {
+  background-color: #99ccff;
+  color: black;
+  font-weight: bold;
+}
+
+.font {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.textPrimary {
+color: red;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+/* On screens that are 768px or less*/
+@media screen and (max-width: 768px) {
+  body {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
