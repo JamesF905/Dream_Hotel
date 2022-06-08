@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JamesF905/Dream_Hotel">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Online Hotel Booking System</h3>
@@ -112,7 +112,7 @@ Project Link: [https://github.com/JamesF905/Dream_Hotel](https://github.com/Jame
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/james-fidlin-98853a239/
-[product-screenshot]: images/Project_Screenshot.png
+[product-screenshot]: assets/images/Project_Screenshot.png
 
 
 
