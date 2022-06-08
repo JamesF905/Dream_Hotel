@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="assets/css/reset.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link rel="stylesheet" href="assets/css/styles.css" />
@@ -52,19 +53,8 @@
 
 
     <article id="roomBooking">
-      <section class="info_sec">
-        <h2>Your Room is Waiting...</h2>
-        <p>Book now for as low as $100!</p>
-        <label for="type">Emperor Suite</label>
-        <input type="radio" name="type" value="Emperor">
-        <label for="type">Romance Suite</label>
-        <input type="radio" name="type" value="Romance">
-        <label for="type">Family Suite</label>
-        <input type="radio" name="type" value="Family">
-        <label for="type">Double Suite</label>
-        <input type="radio" name="type" value="Double">
-        <label for="type">Economy Suite</label>
-        <input type="radio" name="type" value="Economy">
+      <section id="JQ_target" class="info_sec">
+        
       </section>
       <section class="form_sec">
         <input type="text" class="form-control" id="fullName" placeholder="First Name">
@@ -75,7 +65,7 @@
         <input type="text" class="form-control" id="children" placeholder="Children">
         <input type="text" class="form-control" id="dateStart" placeholder="From">
         <input type="text" class="form-control" id="dateEnd" placeholder="To">
-        <button class="form-control" id="inputFullName">Book Now</button>
+        <button class="form-control" id="book_now">Book Now</button>
       </section>
     </article>
     <article id="mini-banner">
