@@ -78,11 +78,12 @@ main{
         color: aliceblue;
     }
 
-    input[type=radio] {
+    
+    #roomBooking h1{
+        font-size: 60px;
     }
-
     #roomBooking h2{
-        font-size: 50px;
+        font-size: 40px;
     }
 
     #roomBooking p{
@@ -133,7 +134,6 @@ main{
     }
     .info_sec{
         max-width: 70%;
-        align-self: baseline;
     }
 
     .form_sec{
