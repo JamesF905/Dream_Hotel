@@ -29,9 +29,27 @@
 
 [![Online Hotel Booking System][product-screenshot]](https://jamesf905.github.io/Dream_Hotel)
 
+Note: Though slow the API do eventually load on the booking section, this version hasnt been optimized for speed yet
+
 For this project, Rakibul, Sampat, and I aimed to build an online hotel booking system, complete with reservations, points of interest, and price comparrisons. Though we fell short, or slightly late, we gained valuable experience working as a team, delegating tasks, and using github to full effect. We discovered valuable resources such as Rapid Api, and learned many new challenging ways to use third party API's. 
 
 We took on a very large project, much larger than we anticipated, but we are all proud of the way we pressed on, often into the early morning hours, just to start over the next morning after a quick rest. If we could do it all over again, the main thing we would change would be to first identify which API's we needed, build them seperately, then build the site around them. Building sperate sections of the site together, rather than building focusing of different areas like html, css, and jquery individually.
+
+A BREAKDOWN OF HOW WE IMPLEMENTED RAPIDAPI to generate dynamic price ranges
+
+1) Gather a list of ten hotels local to Cancun
+2) Then takes those hotels and gets prices based on the checkin and check out dates and the hotal id from the first API call.
+3) This returns a new array with hotelid, checkin, checkout, and rates.
+4) From there the hotel id's are compaired between the two objects, and where they match $.extend was used to build a final object of hotels with all their info, as well as prices from multiple sources based on the check/checkout times.
+5) The lowest value of these prices are taken for each hotel, then again, the lowest prices of all hotels to finally reach a lowest base rate.
+6) This base rate is then used to adjust the pricing for our lowest room, so that it will always be 5 dollars cheaper per night than all other competitors. The prices of higher teir rooms are raised by 50 dollars each from this base rate.
+7) If the api fails to load, then our hotel base rate ($300) is used instead
+
+CURRENT ISSUES
+1) Loads slow
+2) Page needs to load independant of price gathering through the AIP, then updated after.
+
+We also used Tom Tom to generate points of interest based on the location of our hotel in downtown Cancun
 
 Below is the original user story and site plan we wrote at the beginning of the project.
 -----------------------------------------------------------------------------------------------------------------------
