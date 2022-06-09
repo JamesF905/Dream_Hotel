@@ -1,113 +1,111 @@
-//$(".room_links").click(selectSuite);
 $("#book_now").click(setRoom);
-//Get the array of hotels near cancun
-
-let remote_status;
-
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Host': 'hotel-price-aggregator.p.rapidapi.com',
-		'X-RapidAPI-Key': 'dff196c561msh0c8ace6cb8d11dep1ebe39jsn419e5cef5f41'
-	}
-};
-
-fetch('https://hotel-price-aggregator.p.rapidapi.com/search?q=cancun', options)
-	.then(response => response.json())
-	.then(function (data) {
-        getRates(data);
-       //console.log(data);
-    })
-	.catch(err => console.error(err));
-
-//Send the Hotels array to the fetch and get rates for each
-function getRates(d){
-	let checkinDATE = "2022-06-7";
-	let checkoutDATE = "2022-06-8";
-	compet = [];
-	toot = {data:[]};
-	for(i=0;i<d.length;i++){
-		compet.push({name:d[i].shortName, address:d[i].address.address,city:d[i].address.city,country:d[i].address.country,hotelId:d[i].hotelId});
-		toot.data.push({hotelId:d[i].hotelId,dates:[{checkIn:checkinDATE,checkOut:checkoutDATE},{checkIn:checkinDATE,checkOut:checkoutDATE}]});
-	}
-	sendTo = JSON.stringify(toot);
-	
-
-	const options = {
-		method: 'POST',
-		headers: {
-			'content-type': 'application/json',
-			'X-RapidAPI-Host': 'hotel-price-aggregator.p.rapidapi.com',
-			'X-RapidAPI-Key': 'dff196c561msh0c8ace6cb8d11dep1ebe39jsn419e5cef5f41'
-		},
-		body: sendTo
-};
-		
-fetch('https://hotel-price-aggregator.p.rapidapi.com/batchRates', options)
-	.then(response => response.json())
-	.then(data => compile(compet,data))
-	.catch(err => console.error(err));		
+//Set the default base rate to be used if the api call fails
+const default_baseRate = 300;
+//get local storage status
+remote_array = JSON.parse(localStorage.getItem("Rooms_List"));
+//create the local rooms array if it doesnt exist yet, otherwise render the rooms from local storage 
+if(remote_array !== null){
+    creatLocalDATA(default_baseRate);
+    render_rooms(remote_array);
+}else{
+    setRates("06/09/2022", "06/10/2022");
 }
 
-// combine the hotels array with the prices array by checking to see if the hotel i'd match, then using $.extend to combine them into a complete hotels array with prices included	
-function compile(ar1, ar2){
-	for(i=0; i<ar1.length; i++){
-		for (key of ar2) {		
-			if(key.hotelId === ar1[i].hotelId){
-				
-				//get the sources for the rates, turn into a smaller array
-				let rateSources = key.dates[0].rates.map(function(value) {
-					return {source: value.host, rate: value.rate};
-				});
-		
-				//get the lowest rate for each hotal
-				let rates_array = key.dates[0].rates.map(function(value) {
-					return value.rate;
-				});
+//create rooms array
+function setRates(check_in, check_out){
+    //check if the api is running
+    //Get the array of hotels near cancun
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Host': 'hotel-price-aggregator.p.rapidapi.com',
+            'X-RapidAPI-Key': 'dff196c561msh0c8ace6cb8d11dep1ebe39jsn419e5cef5f41'
+        }
+    };
+    
+    fetch('https://hotel-price-aggregator.p.rapidapi.com/search?q=cancun', options)
+    .then(function (response) {
+        if (response.status !== 200) {
+            //alert(`failed - ${response.status} error`);
+            creatLocalDATA(default_baseRate);
+        }else{
+            //alert("success");
+            return response.json();
+        }
+      })
+    .then(function (d) {      
+        compet = [];
+        toot = {data:[]};
+        for(i=0;i<d.length;i++){
+            compet.push({name:d[i].shortName, address:d[i].address.address,city:d[i].address.city,country:d[i].address.country,hotelId:d[i].hotelId});
+            toot.data.push({hotelId:d[i].hotelId,dates:[{checkIn:check_in,checkOut:check_out},{checkIn:check_in,checkOut:check_out}]});
+        }
+        sendTo = JSON.stringify(toot);            
+        //Get the array of prices for hotels near cancun
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'X-RapidAPI-Host': 'hotel-price-aggregator.p.rapidapi.com',
+                'X-RapidAPI-Key': 'dff196c561msh0c8ace6cb8d11dep1ebe39jsn419e5cef5f41'
+            },
+            body: sendTo
+        };
 
-				let minimum = Math.min.apply(Math, rates_array);
-
-				//make the new object to combine with the object in ar1[i]
-				let obj= {Check_In: key.dates[0].checkIn, Check_Out: key.dates[0].checkOut, Rate_Sources: rateSources, Lowest_Rate: minimum};
-				
-				$.extend(ar1[i], obj);
-				break;			
-			}
-		}	
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	let lowest_HOTEL_rates_ARRAY = ar1.map(function(value) {
-		return value.Lowest_Rate;
-	});
-
-	let default_baseRate = 300;
-	let adjusted_baseRate = Math.min.apply(Math, lowest_HOTEL_rates_ARRAY);
-	
-	//check if the api returned values
-	if(adjusted_baseRate !== null){
-		
-        default_rooms_array(adjusted_baseRate, true);
+        return fetch('https://hotel-price-aggregator.p.rapidapi.com/batchRates', options)
+        .then(function (response) {
+            if (response.status !== 200) {
+                //alert(`failed - ${response.status} error`);
+                creatLocalDATA(default_baseRate);
+            }else{
+                //alert("success");
+                return response.json();
+            }
+        })
+        .then(function (data) {
+            //combine the hotels array with the prices array by checking to see if the hotel i'd match, then using $.extend to combine them into a complete hotels array with prices included
+            for(i=0; i<compet.length; i++){
+                for (key of data) {
+                    if(key.hotelId === compet[i].hotelId){
+                        
+                        //get the sources for the rates, turn into a smaller array
+                        let rateSources = key.dates[0].rates.map(function(value) {
+                            return {source: value.host, rate: value.rate};
+                        });
+                
+                        //get the lowest rate for each hotal
+                        let rates_array = key.dates[0].rates.map(function(value) {
+                            return value.rate;
+                        });
         
-	}else{
+                        let minimum = Math.min.apply(Math, rates_array);
         
-		default_rooms_array(default_baseRate, false);
+                        //make the new object to combine with the object in compet[i]
+                        let obj= {Check_In: key.dates[0].checkIn, Check_Out: key.dates[0].checkOut, Rate_Sources: rateSources, Lowest_Rate: minimum};
+                        
+                        $.extend(compet[i], obj);
+                        break;			
+                    }
+                }	
+            } 
+            
+            let lowest_HOTEL_rates_ARRAY = compet.map(function(value) {
+                return value.Lowest_Rate;
+            });
         
-	}
-
+            let adjusted_baseRate = Math.min.apply(Math, lowest_HOTEL_rates_ARRAY);        
+            creatLocalDATA(adjusted_baseRate);
+        })
+        .catch(err => console.error(err))
+    })
+    .catch(err => console.error(err))       
+    
 }
 
 //make room type array([ price/night, # of rooms, floor number, #of smoking rooms, Bed types, premium restaurant access, microwave, stove, mini-fridge])
 //add smoking and bed types to the array
 
-function default_rooms_array(baseRate, success){
+function creatLocalDATA(baseRate){
     
     let room_types = {
             Emperor: {rate:baseRate+200,number_of_rooms:5,floor:500,smoking_rooms:0,bed:"1 King",premium_restaurant:true,microwave:true,stove:true,mini_fridge:true},
@@ -254,6 +252,7 @@ function setRoom(){
 }
 
 // Reference: https://www.w3schools.com/w3css/w3css_slideshow.asp
+/*
 let slideIndex = 0;
 
 function carousel() {
@@ -269,4 +268,4 @@ function carousel() {
   setTimeout(carousel, 3000);
 }
 
-carousel();
+carousel();*/
