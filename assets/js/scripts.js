@@ -1,6 +1,7 @@
 $("#book_now").click(setRoom);
 //Set the default base rate to be used if the api call fails
 const default_baseRate = 300;
+const API_KEY = "8ed5daf921msh719ef71333f93fdp17181ejsn644b1e3ee862";
 //get local storage status
 remote_array = JSON.parse(localStorage.getItem("Rooms_List"));
 //create the local rooms array if it doesnt exist yet, otherwise render the rooms from local storage 
@@ -19,7 +20,7 @@ function setRates(check_in, check_out){
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'hotel-price-aggregator.p.rapidapi.com',
-            'X-RapidAPI-Key': 'dff196c561msh0c8ace6cb8d11dep1ebe39jsn419e5cef5f41'
+            'X-RapidAPI-Key': API_KEY
         }
     };
     
@@ -47,7 +48,7 @@ function setRates(check_in, check_out){
             headers: {
                 'content-type': 'application/json',
                 'X-RapidAPI-Host': 'hotel-price-aggregator.p.rapidapi.com',
-                'X-RapidAPI-Key': 'dff196c561msh0c8ace6cb8d11dep1ebe39jsn419e5cef5f41'
+                'X-RapidAPI-Key': API_KEY
             },
             body: sendTo
         };
@@ -254,7 +255,6 @@ function setRoom(){
 // Reference: https://www.w3schools.com/w3css/w3css_slideshow.asp
 /*
 let slideIndex = 0;
-
 function carousel() {
   let x = document.querySelectorAll(".autoSlides");
   for (let i = 0; i < x.length; i++) {
@@ -267,5 +267,4 @@ function carousel() {
   x[slideIndex - 1].style.display = "block";
   setTimeout(carousel, 3000);
 }
-
 carousel();*/
